@@ -57,6 +57,18 @@ public class JavaConsoleApp {
 					{
 						System.out.println(jc.columnname(query));
 						System.out.println(jc.printlist(mylist, col));
+						
+						System.out.println("Press totals to release your report");
+						
+						String report=sc.next();
+						if(report.equals("totals"))
+						{
+							System.out.println(jc.totalReport());
+						}
+						else
+						{
+							continue;
+						}
 					}
 					else if(seerecord==2)
 					{
@@ -66,10 +78,22 @@ public class JavaConsoleApp {
 						jc.addtoFile("Sql "+index, content);
 						
 						System.out.println("Your records are in 'Sql '"+index+".txt");
+						
+						System.out.println("Press totals to release your report");
+					    
+						String report=sc.next();
+						if(report.equals("totals"))
+						{
+							System.out.println(jc.totalReport());
+						}
+						else
+						{
+							continue;
+						}
 					}
 					else
 					{
-						System.out.println("You input wrong text");
+						System.out.println("You input wrong query");
 					}
 					
 				}
@@ -92,6 +116,18 @@ public class JavaConsoleApp {
 						jc.addtoFile("Sql "+index, content);
 						
 						System.out.println("Your records are in ''Sql "+index+"''.txt");
+						
+						System.out.println("Press totals to release your report");
+						
+						String report=sc.next();
+						if(report.equals("totals"))
+						{
+							System.out.println(jc.totalReport());
+						}
+						else
+						{
+							continue;
+						}
 					}
 					else if(seerecord==2)
 					{
@@ -101,6 +137,18 @@ public class JavaConsoleApp {
 						jc.addtoFile("Sql "+index, content);
 						
 						System.out.println("Your records are in 'Sql '"+index+".txt");
+						
+						System.out.println("Press totals to release your report");
+						
+						String report=sc.next();
+						if(report.equals("totals"))
+						{
+							System.out.println(jc.totalReport());
+						}
+						else
+						{
+							continue;
+						}
 					}
 					else
 					{

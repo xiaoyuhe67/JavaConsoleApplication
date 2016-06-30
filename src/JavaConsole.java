@@ -100,6 +100,28 @@ public class JavaConsole {
 			 bwr.newLine();
 			 bwr.flush();
 	 }
+	 public String totalReport() throws SQLException
+	 {
+		 List<String> mylist = new ArrayList<String>();
+		 
+		 String query="select c.NumberofCustomers as \"Number of Customers\", "
+				+ "d.NumberofCompanies as \"Number of Companies\", "
+						+ "e.NumberofStates as \"Number of States\""
+								+ "from"
+								+ "(select count(distinct customerid) as NumberofCustomers from customers) c,"
+								+ "(select count(distinct companyid) as NumberofCompanies from companies) d,"
+								+ "(select count(distinct stateid) as NumberofStates from states) e";
+		
+		 mylist=DBUtility.select(query);
+		 int col=DBUtility.columnnum(query);
+		 int row=mylist.size()/col;
+		 
+		 String content="";
+		 content+=columnname(query)+"\n";
+		 content+=printlist(mylist, col)+"\n";
+		 
+		 return content;
+	 }
 	 
 
 }
